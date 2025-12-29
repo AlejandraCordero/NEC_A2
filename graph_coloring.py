@@ -17,7 +17,7 @@ def greedy_coloring(graph):
         coloring[node] = next (color for color in itertools.count() if color not in adjacent_colors)
     return coloring
 
-n_nodes = 5
+n_nodes = 25
 
 G = nx.Graph()
 G.add_nodes_from(range(n_nodes))
@@ -36,3 +36,4 @@ print('K:', len(set(coloring_result.values())))
 color_map = [coloring_result[node] for node in G.nodes()]
 nx.draw(G, node_color=color_map, with_labels=True, font_weight='bold')
 plt.show()
+
